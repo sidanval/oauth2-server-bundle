@@ -156,6 +156,7 @@ return static function (ContainerConfigurator $container): void {
             ->args([
                 service(AccessTokenRepositoryInterface::class),
                 null,
+                null
             ])
         ->alias(ResourceServer::class, 'league.oauth2_server.resource_server')
 
