@@ -304,8 +304,9 @@ final class LeagueOAuth2ServerExtension extends Extension implements PrependExte
             ->replaceArgument(1, new Definition(CryptKey::class, [
                 $config['public_key'],
                 null,
-                false,
+                null,
             ]))
+            ->replaceArgument(2, new Reference($config['token_validator_class']))
         ;
     }
 

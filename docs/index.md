@@ -75,12 +75,13 @@ For implementation into Symfony projects, please see [bundle documentation](basi
             # Whether to enable access token saving to persistence layer (default to true)
             persist_access_token: true
 
+            response_type_class: ~ # Custom response type, see League\OAuth2\Server\ResponseTypes\BearerTokenResponse
         resource_server:      # Required
 
             # Full path to the public key file
             # How to generate a public key: https://oauth2.thephpleague.com/installation/#generating-public-and-private-keys
             public_key:           ~ # Required, Example: /var/oauth/public.key
-
+            token_validator_class: ~ # Custom token validator, see League\OAuth2\Server\AuthorizationValidators\BearerTokenValidator
         scopes:
             # Scopes that you wish to utilize in your application.
             # This should be a simple array of strings.

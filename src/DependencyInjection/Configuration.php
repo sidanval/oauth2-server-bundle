@@ -134,6 +134,10 @@ final class Configuration implements ConfigurationInterface
                     ->isRequired()
                     ->cannotBeEmpty()
                 ->end()
+            ->scalarNode('token_validator_class')
+                ->info("Define a custom TokenValidator")
+                ->defaultValue(null)
+            ->end()
             ->end()
         ;
 
