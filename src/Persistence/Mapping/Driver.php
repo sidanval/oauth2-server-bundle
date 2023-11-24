@@ -120,6 +120,7 @@ class Driver implements MappingDriver
             ->createField('userIdentifier', 'string')->length(128)->nullable(true)->build()
             ->createField('scopes', 'oauth2_scope')->nullable(true)->build()
             ->addField('revoked', 'boolean')
+            ->addField('data', 'jsonb')
             ->createManyToOne('client', $this->clientClass)->addJoinColumn('client', 'identifier', false, false, 'CASCADE')->build()
         ;
     }

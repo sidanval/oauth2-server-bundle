@@ -38,6 +38,8 @@ class AuthorizationCode implements AuthorizationCodeInterface
      */
     private $revoked = false;
 
+    private $data = [];
+
     /**
      * @param list<Scope> $scopes
      *
@@ -48,13 +50,15 @@ class AuthorizationCode implements AuthorizationCodeInterface
         \DateTimeInterface $expiry,
         ClientInterface $client,
         ?string $userIdentifier,
-        array $scopes
+        array $scopes,
+        array $data
     ) {
         $this->identifier = $identifier;
         $this->expiry = $expiry;
         $this->client = $client;
         $this->userIdentifier = $userIdentifier;
         $this->scopes = $scopes;
+        $this->data = $data;
     }
 
     /**
@@ -105,6 +109,11 @@ class AuthorizationCode implements AuthorizationCodeInterface
     public function getScopes(): array
     {
         return $this->scopes;
+    }
+
+    public function getData(): array
+    {
+        return $this->data;
     }
 
     /**

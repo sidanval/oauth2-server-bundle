@@ -14,4 +14,16 @@ final class AuthCode implements AuthCodeEntityInterface
     use AuthCodeTrait;
     use EntityTrait;
     use TokenEntityTrait;
+
+    private $data;
+
+    public function getData() {
+        return $this->data;
+    }
+
+    public function setData($data) {
+        $this->data = $data;
+
+        return $this;
+    }
 }

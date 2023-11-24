@@ -12,3 +12,4 @@ phpunit.xml
 
 # Tests
 tests/.kernel/
+.idea
