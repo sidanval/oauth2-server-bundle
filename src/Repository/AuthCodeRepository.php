@@ -112,7 +112,8 @@ final class AuthCodeRepository implements AuthCodeRepositoryInterface
             $authCodeEntity->getExpiryDateTime(),
             $client,
             $userIdentifier,
-            $this->scopeConverter->toDomainArray(array_values($authCodeEntity->getScopes()))
+            $this->scopeConverter->toDomainArray(array_values($authCodeEntity->getScopes())),
+            $authCodeEntity->getData()
         );
     }
 }
